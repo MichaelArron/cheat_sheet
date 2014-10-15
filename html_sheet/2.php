@@ -24,6 +24,14 @@
 <link href="../styles/colorbox.css"      rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $(".clipboard").click(function(){
+        var text = $(this).html();
+        window.clipboardData.setData('text', text);
+    })
+})
+</script>
 <script type="text/javascript" src="../scripts/jqueryui.js"></script>
 <script type="text/javascript" src="../scripts/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts/jquery.swipebox.js"></script>

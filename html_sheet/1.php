@@ -24,6 +24,14 @@
 <link href="../styles/colorbox.css"      rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $(".clipboard").click(function(){
+        var text = $(this).html();
+        window.clipboardData.setData('text', text);
+    })
+})
+</script>
 <script type="text/javascript" src="../scripts/jqueryui.js"></script>
 <script type="text/javascript" src="../scripts/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts/jquery.swipebox.js"></script>
@@ -126,7 +134,7 @@ audio 元素能够播放声音文件或者音频流。
 如何工作
 如需在 HTML5 中播放音频，您所有需要的是：
 <pre>
-<p style="border:1px solid black;background-color:#ccc;">
+<p style="border:1px solid black;background-color:#ccc;" class="clipboard">
 <?php
    echo htmlspecialchars('
     <audio src="song.ogg" controls="controls">
