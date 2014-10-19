@@ -19,7 +19,7 @@
         <a href="#" class="homepage-logo">
             <h1 style="font-size:28px;height:60px;">️程序员小抄</h1>
         </a>
-        <a href="../index.html" class="go-home">HOME</a>
+        <a href="../index.html" class="go-home">INDEX</a>
         <a href="#" class="go-menu">MENU</a>
         <a href="#" class="go-back">CLOSE</a>
     </div>
