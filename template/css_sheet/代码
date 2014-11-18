@@ -1,0 +1,35 @@
+CSS3动画属性（Animation）
+
+@keyframes		规定动画。		css3
+animation 		所有动画属性的简写属性，除了animation-play_state属性。		css3
+animation-name		规定 @keyframes动画的名称。		css3
+animation-duration		规定动画完成一个周期所花费的秒或毫秒。		css3
+animation-timing-function		规定动画的速度曲线	。	css3
+animation-delay		规定动画何时开始。		css3
+animation-iteration-count		规定动画被播放的次数。		css3
+animation-direction		规定动画是否在下个周期逆向地播放。		css3
+animation-play-state		规定动画是否正在运行或暂停。		css3
+animation-fill-mode		规定对象动画时间之外的状态。		css3
+
+CSS 背景属性(Background)
+background 		在一个声明中设置所有的背景属性。		css1
+background-attachment		设置背景图像是否固定或者随着页面的其余部分滚动。		css1
+background-color		设置元素的背景颜色。		css1
+background-image		设置元素的背景图像。		css1
+background-position		设置背景图像的开始位置。		css1
+background-repeat		设置是否及如何重复背景图像。		css1
+background-clip			规定背景的绘制区域。		css3
+background-origin		规定背景图片的定位区域。		css3
+background-size			规定背景图片的尺寸。		css3
+
+CSS边框属性(Border和Outline)
+border 			在一个声明中设置所有的边框属性。			css1
+border-bottom		在一个声明中设置所有的下边框属性。		css1
+border-bottom-color		设置下边框的颜色。			css2
+border-bottom-style		设置下边框的样式。		css2
+border-bottom-width		设置下边框的宽度。		css1
+border-color  		设置四条边框的颜色。		css1
+border-left			在一个声明中设置所有的左边框属性。		css1
+border-left-color		设置左边框的颜色。			css2
+border-left-style		设置左边框的样式。			css2
+border-left-width		设置左边框的宽度。			css1
