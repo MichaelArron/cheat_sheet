@@ -40,7 +40,34 @@ p{
 <body> 
 <?php
     $list = array();
-    
+    // //start
+    // $arr = array();
+    // $arr[0] = '';
+    // $arr[1] = '';
+    // $arr[2] = '';
+    // $arr[3] = '';
+    // $arr[4] = '';
+    // $list[] = $arr;
+    // //end
+
+    //start
+    $arr = array();
+    $arr[0] = '    <!--...-->    注释标签';
+    $arr[1] = '    <!--...-->    注释标签用来在源文档中插入注释。注释不会在浏览器中显示。';
+    $arr[2] = '';
+    $arr[3] = '    <!--这是一个注释。 注释不会在浏览器中显示-->    
+<br />
+    <p>这是段落标签</p>    ';
+    $arr[4] = '浏览器支持：IE Firefox Chrome Safari Opera <br />
+您可使用注释对您的代码进行解释，这样做有助于您在以后的时间对代码的编辑。特别是代码量很大的情况下很有用。<br />
+您也可以在注释内容存储针对程序所定制的信息。在这种情况下，这些信息对用户是不可见的，但是对程序来说是可用的。一个好的习惯是把注释或样式元素放入注释文本中，这样就可避免不支持脚本或样式的老浏览器把它们显示为纯文本。<br />
+    <!--...-->    
+注释标签不支持任何标准属性。<br />
+    <!--...-->    
+注释标签不支持任何事件属性。';
+    $list[] = $arr;
+    //end
+
     //start
     $arr = array();
     $arr[0] = '    <a>    标签';
@@ -59,10 +86,12 @@ p{
 <tr><td>target</td><td>_blank<br />_parent<br />_self<br />_top<br />framename</td><td>规定在何处打开链接文档。</td></tr>
 <tr><td>type</td><td>MIME type</td><td>HTML5 中的新属性。规定被链接文档的的 MIME 类型。</td></tr>
 </table>';
-    $arr[3] = '    <a href="http://www.baidu.com">百度</a> <!--指向 百度 的超链接-->    ';
+    $arr[3] = '    <a href="http://www.baidu.com">百度</a>    
+<br />
+    <!--指向 百度 的超链接-->    ';
     $arr[4] = '浏览器支持：IE Firefox Chrome Safari Opera <br />
     <a>    
-    元素最重要的属性是 href 属性，它指示链接的目标。 <br />
+元素最重要的属性是 href 属性，它指示链接的目标。 <br />
 <span class="red">提示：</span>如果不使用 href 属性，则不可以使用如下属性：download, hreflang, media, rel, target 以及 type 属性。<br />
 <span class="red">提示：</span>被链接页面通常显示在当前浏览器窗口中，除非您规定了另一个目标（target 属性）。<br />
 <span class="red">提示：</span>请使用 CSS 来设置链接的样式。<br />
@@ -70,8 +99,7 @@ p{
     <a>     
 标签可以是超链接或锚。在 HTML5 中，
     <a>     
-    标签始终是超链接，但是如果未设置 href 属性，则只是超链接的占位符。
-HTML5 提供了一些新属性，同时不再支持一些 HTML 4.01 属性。<br />
+标签始终是超链接，但是如果未设置 href 属性，则只是超链接的占位符。HTML5 提供了一些新属性，同时不再支持一些 HTML 4.01 属性。<br />
     <a>    
 标签支持 HTML 中的全局属性。<br />
     <a>    
@@ -171,23 +199,37 @@ HTML5 提供了一些新属性，同时不再支持一些 HTML 4.01 属性。<br
             ?>
             <div class="container">
                 <div class="toggle-3">
-                    <a href="#" class="deploy-toggle-3"><?php echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[0]);?><em class=""><strong class=""></strong></em></a>
+                    <a href="#" class="deploy-toggle-3"><?php if($v[0]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[0]);}?><em class=""><strong class=""></strong></em></a>
                     <div class="toggle-content" style="display: none;">               
                         <p>
-                            <span class="text-highlight highlight-green">定义</span>
-                            <?php echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[1]);?>
+                            <span class="text-highlight highlight-green">定义</span><br />
+                            <?php  if($v[1]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[1]);}else{echo "无";}?>
                         </p>
                         <p>
-                            <span class="text-highlight highlight-blue">属性</span> 
-                            <?php echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[2]);?> 
+                            <span class="text-highlight highlight-blue">属性</span><br /> 
+                            <?php  if($v[2]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[2]);}else{echo "无";}?> 
                         </p>
                         <p>
-                            <span class="text-highlight highlight-magenta">范例</span>
-                            <?php echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[3]);?>    
+                            <span class="text-highlight highlight-magenta">范例</span><br />
+                            <?php 
+                                if(is_array($v[3])){
+                                    foreach($v[3] as $exp_val){
+                            ?>
+                                <em class="speach-left-title">代码范例<?php echo $exp_key+1;?>:</em>
+                                <span class="speach-left"><?php  if($exp_val!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $exp_val);}else{echo "无";}?></span>
+                            <?php  
+                                    }
+                                }else{
+                            ?>
+                                <em class="speach-left-title">代码范例:</em>
+                                <span class="speach-left"><?php  if($v[3]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[3]);}else{echo "无";}?></span>
+                            <?php
+                                }
+                            ?>    
                         </p>
                         <p>
-                            <span class="text-highlight highlight-orange">注释</span>
-                            <?php echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[4]);?>
+                            <span class="text-highlight highlight-orange">注释</span><br />
+                            <?php  if($v[4]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[4]);}else{echo "无";}?>
                         </p>
                     </div>
                 </div>
