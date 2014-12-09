@@ -26,8 +26,23 @@
 p{
     word-break:break-all;word-wrap:break-word;
 }
+.sph-left-title{
+    padding-left: 15px;
+    width: 100%;
+}
+.sph-left{
+    width: 70%;
+    padding: 10px;
+    border-radius:10px;
+    background-color:#FFFFFF;   
+    border:solid 1px #cacaca;
+    margin-left: 15px;
+}
 .red{
     color:red;
+}
+.bold{
+    font-weight: bold;
 }
 </style>
 
@@ -55,9 +70,8 @@ p{
     $arr[0] = '    <!--...-->    注释标签';
     $arr[1] = '    <!--...-->    注释标签用来在源文档中插入注释。注释不会在浏览器中显示。';
     $arr[2] = '';
-    $arr[3] = '    <!--这是一个注释。 注释不会在浏览器中显示-->    
-<br />
-    <p>这是段落标签</p>    ';
+    $arr[3]['title'] = '注释用法';
+    $arr[3]['code'] = '    <!--这是一个注释。 注释不会在浏览器中显示-->    ';
     $arr[4] = '浏览器支持：IE Firefox Chrome Safari Opera <br />
 您可使用注释对您的代码进行解释，这样做有助于您在以后的时间对代码的编辑。特别是代码量很大的情况下很有用。<br />
 您也可以在注释内容存储针对程序所定制的信息。在这种情况下，这些信息对用户是不可见的，但是对程序来说是可用的。一个好的习惯是把注释或样式元素放入注释文本中，这样就可避免不支持脚本或样式的老浏览器把它们显示为纯文本。<br />
@@ -65,6 +79,61 @@ p{
 注释标签不支持任何标准属性。<br />
     <!--...-->    
 注释标签不支持任何事件属性。';
+    $list[] = $arr;
+    //end
+
+    //start
+    $arr = array();
+    $arr[0] = '    <!DOCTYPE>    声明';
+    $arr[1] = '    <!DOCTYPE>    
+声明位于文档中的最前面的位置，处于
+    <html>    
+标签之前。<br />
+    <!DOCTYPE>    
+声明不是一个 HTML 标签；它是用来告知 Web 浏览器页面使用了哪种 HTML 版本。<br />
+在 HTML 4.01 中，
+    <!DOCTYPE>    
+声明需引用 DTD （文档类型声明），因为 HTML 4.01 是基于 SGML （Standard Generalized Markup Language 标准通用标记语言）。DTD 指定了标记语言的规则，确保了浏览器能够正确的渲染内容。<br />
+HTML5 不是基于 SGML，因此不要求引用 DTD。<br />
+<span class="red">提示：</span>总是给您的 HTML 文档添加
+    <!DOCTYPE>    
+声明，确保浏览器能够预先知道文档类型。<br />';
+    $arr[2] = '';
+    $arr[3][0]['title'] = '<span class="bold">HTML 5</span><br />';
+    $arr[3][0]['code'] = '    <!DOCTYPE html>    ';
+    $arr[3][1]['title'] = '<span class="bold">HTML 4.01 Strict</span><br />
+这个 DTD 包含所有 HTML 元素和属性，但不包括表象或过时的元素（如 font ）。框架集是不允许的。';   
+    $arr[3][1]['code'] = '    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">    ';
+    $arr[3][2]['title'] = '<span class="bold">HTML 4.01 Transitional</span><br />
+这个 DTD 包含所有 HTML 元素和属性，包括表象或过时的元素（如 font ）。框架集是不允许的。';   
+    $arr[3][2]['code'] = '    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">    ';   
+    $arr[3][3]['title'] = '<span class="bold">HTML 4.01 Frameset</span><br />
+这个 DTD 与 HTML 4.01 Transitional 相同，但是允许使用框架集内容。';
+    $arr[3][3]['code'] = '    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">    ';    
+    $arr[3][4]['title'] = '<span class="bold">XHTML 1.0 Strict</span><br />
+这个 DTD 包含所有 HTML 元素和属性，但不包括表象或过时的元素（如 font ）。框架集是不允许的。结构必须按标准格式的 XML 进行书写。';   
+    $arr[3][4]['code'] = '    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    ';
+    $arr[3][5]['title'] = '<span class="bold">XHTML 1.0 Transitional</span><br />
+这个 DTD 包含所有 HTML 元素和属性，包括表象或过时的元素（如 font ）。框架集是不允许的。结构必须按标准格式的 XML 进行书写。';    
+    $arr[3][5]['code'] = '    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">    ';
+    $arr[3][6]['title'] = '<span class="bold">XHTML 1.0 Frameset</span><br />
+这个 DTD 与 XHTML 1.0 Transitional 相同，但是允许使用框架集内容。';   
+    $arr[3][6]['code'] = '    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">    ';
+    $arr[3][7]['title'] = '<span class="bold">XHTML 1.1</span><br />
+这个 DTD 与 XHTML 1.0 Strict 相同，但是允许您添加模块（例如为东亚语言提供 ruby 支持）。';  
+    $arr[3][7]['code'] = '    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">    ';
+
+
+    $arr[4] = '<span class="bold">HTML 4.01 与 HTML5之间的差异</span><br />
+HTML 4.01 规定了三种不同的 <!DOCTYPE> 声明，分别是：Strict、Transitional 和 Frameset。 HTML5 中仅规定了一种：
+    <!DOCTYPE html>    <br />
+<span class="red">注释：</span>
+    <!DOCTYPE>    
+标签没有结束标签。<br />
+<span class="red">提示：</span>
+    <!DOCTYPE>    
+声明不区分大小写。<br />
+<span class="red">提示：</span>使用<span class="bold"> W3C </span>的验证 检查您是否编写了一个带有正确 DTD 的合法的 HTML / XHTML 文档！';
     $list[] = $arr;
     //end
 
@@ -86,9 +155,8 @@ p{
 <tr><td>target</td><td>_blank<br />_parent<br />_self<br />_top<br />framename</td><td>规定在何处打开链接文档。</td></tr>
 <tr><td>type</td><td>MIME type</td><td>HTML5 中的新属性。规定被链接文档的的 MIME 类型。</td></tr>
 </table>';
-    $arr[3] = '    <a href="http://www.baidu.com">百度</a>    
-<br />
-    <!--指向 百度 的超链接-->    ';
+    $arr[3]['title'] = '指向 百度 的超链接';
+    $arr[3]['code'] = '    <a href="http://www.baidu.com">百度</a>    ';
     $arr[4] = '浏览器支持：IE Firefox Chrome Safari Opera <br />
     <a>    
 元素最重要的属性是 href 属性，它指示链接的目标。 <br />
@@ -199,37 +267,38 @@ p{
             ?>
             <div class="container">
                 <div class="toggle-3">
-                    <a href="#" class="deploy-toggle-3"><?php if($v[0]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[0]);}?><em class=""><strong class=""></strong></em></a>
+                    <a href="#" class="deploy-toggle-3"><?php if($v[0]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $v[0]);}?><em class=""><strong class=""></strong></em></a>
                     <div class="toggle-content" style="display: none;">               
-                        <p>
+                        <p class="container">
                             <span class="text-highlight highlight-green">定义</span><br />
-                            <?php  if($v[1]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[1]);}else{echo "无";}?>
+                            <?php  if($v[1]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $v[1]);}else{echo "无";}?>
                         </p>
-                        <p>
+                        <p class="container">
                             <span class="text-highlight highlight-blue">属性</span><br /> 
-                            <?php  if($v[2]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[2]);}else{echo "无";}?> 
+                            <?php  if($v[2]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $v[2]);}else{echo "无";}?> 
                         </p>
-                        <p>
-                            <span class="text-highlight highlight-magenta">范例</span><br />
+                        <p class="container">
+                            <span class="text-highlight highlight-magenta">范例</span>
+                            <div class="clear"></div>
                             <?php 
-                                if(is_array($v[3])){
+                                if(!isset($v[3]['code'])){
                                     foreach($v[3] as $exp_val){
-                            ?>
-                                <em class="speach-left-title">代码范例<?php echo $exp_key+1;?>:</em>
-                                <span class="speach-left"><?php  if($exp_val!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $exp_val);}else{echo "无";}?></span>
+                            ?>                    
+                                <em class="sph-left-title"><?php echo $exp_val['title'];?></em>                       
+                                <div class="sph-left"><?php  if($exp_val['code']!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $exp_val['code']);}else{echo "无";}?></div> 
                             <?php  
                                     }
                                 }else{
-                            ?>
-                                <em class="speach-left-title">代码范例:</em>
-                                <span class="speach-left"><?php  if($v[3]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[3]);}else{echo "无";}?></span>
+                            ?>           
+                                <em class="sph-left-title"><?php echo $v[3]['title'];?></em>
+                                <div class="sph-left"><?php  if($v[3]['code']!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $v[3]['code']);}else{echo "无";}?></div>
                             <?php
                                 }
                             ?>    
                         </p>
-                        <p>
+                        <p class="container">
                             <span class="text-highlight highlight-orange">注释</span><br />
-                            <?php  if($v[4]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){return htmlspecialchars($matches[0]);}, $v[4]);}else{echo "无";}?>
+                            <?php  if($v[4]!=''){echo preg_replace_callback('/(\s{4}.+\s{4})?/', function($matches){if(!empty($matches[0]))return htmlspecialchars($matches[0]);}, $v[4]);}else{echo "无";}?>
                         </p>
                     </div>
                 </div>
